@@ -1,0 +1,21 @@
+{
+  "$id": "/jobs/:job_id/pay",
+  "type": "object",
+  "properties": {
+    "job_id": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^[1-9]?[0-9]*$"
+        }
+      ]
+    }
+  },
+  "required": [
+    "job_id"
+  ]
+}

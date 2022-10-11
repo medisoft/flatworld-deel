@@ -1,0 +1,30 @@
+{
+  "$id": "/admin/best-profession",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    {
+      "required": [
+        "start"
+      ]
+    },
+    {
+      "required": [
+        "end"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$id": "/contracts/:id",
+  "type": "object",
+  "properties": {
+    "id": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^[1-9]?[0-9]*$"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$id": "/admin/best-clients",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    },
+    "limit": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^[1-9]?[0-9]*$"
+        }
+      ]
+    }
+  }
+}
