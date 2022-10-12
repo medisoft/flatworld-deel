@@ -10,7 +10,7 @@ const { Op } = require("sequelize");
  *
  *  @returns
  */
-router.post('/deposit/:userId', getProfile, validSchema(require('../schemas/deposit.json')), async (req, res) => {
+router.post('/deposit/:userId', getProfile, validSchema(require('../schemas/deposit.json'), [ 'params', 'body' ]), async (req, res) => {
   const { Job, Contract, Profile } = req.app.get('models')
   try {
     // Fetches the list of unpaid jobs of the userId
@@ -33,6 +33,7 @@ router.post('/deposit/:userId', getProfile, validSchema(require('../schemas/depo
       }
     })
 
+    console.log('jobs', jobs)
     // Gets the max amount that we allow to deposit
     const maxToPay = jobs.map(j => j.price).reduce((partial, n) => partial + n, 0) * 0.25
     if (req.body.amount > maxToPay) return res.status(400).json({

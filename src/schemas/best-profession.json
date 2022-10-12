@@ -8,23 +8,5 @@
     "end": {
       "type": "string"
     }
-  },
-  "anyOf": [
-    {
-      "required": [
-        "start",
-        "end"
-      ]
-    },
-    {
-      "required": [
-        "start"
-      ]
-    },
-    {
-      "required": [
-        "end"
-      ]
-    }
-  ]
+  }
 }
